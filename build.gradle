@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.jongo:jongo:1.5.0'
+    implementation 'org.mongodb:mongo-java-driver:3.12.10'
+    implementation 'org.hamcrest:hamcrest-all:1.3'
+    implementation 'org.assertj:assertj-core:3.22.0'
+
+    implementation 'org.easymock:easymockclassextension:3.2'
+
+    implementation 'org.junit.platform:junit-platform-surefire-provider:1.3.2'
+    implementation 'org.junit.platform:junit-platform-runner:1.8.2'
+    implementation 'org.junit.vintage:junit-vintage-engine:5.8.2'
+
+    testImplementation 'org.mockito:mockito-all:1.10.19'
+    testImplementation 'org.mockito:mockito-core:4.0.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:4.0.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+
+    /*
+    O CODIGO ABAIXO ESTÁ DEPRECADO. TENTEI ATUALIZAR DE FORMA MAIS COMPATIVEL.
+    AINDA NAO DOMINO GRADLE PARA SABER SE VAI DAR 100% CERTO.
+    // Dependencies your project is based on and won't work without any of them
+    compile group: 'org.jongo', name: 'jongo', version: '1.1'
+    compile group: 'org.mongodb', name: 'mongo-java-driver', version: '2.+'
+
+    // Dependencies just for testing and won't be added to your project
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.hamcrest', name: 'hamcrest-all', version: '1.3'
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '2.0.0'
+
+    testCompile group: 'org.mockito', name: 'mockito-all', version: '1.+'
+    testCompile group: 'org.easymock', name: 'easymock', version: '3.3.1'
+    */
+}
+
+test {
+    useJUnitPlatform()
+}
